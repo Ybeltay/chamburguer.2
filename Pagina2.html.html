@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Suplementos para tu Combo</title>
+<style>
+    /* Estilos CSS para la presentación */
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #FFD700; /* Amarillo oscuro */
+        color: red; /* Cambio de color de texto a rojo */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    .container {
+        text-align: center;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+    }
+    .suplemento {
+        width: 200px;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        margin: 20px auto;
+        display: inline-block;
+    }
+    img {
+        width: 150px;
+        height: 150px;
+        margin-bottom: 10px;
+    }
+    .precio {
+        font-weight: bold;
+    }
+    #enlace {
+        display: block;
+        background-color: red;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-size: 16px;
+        margin-top: 20px;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h1>Suplementos para tu Combo</h1>
+    
+    <div class="suplemento">
+        <h2>Suplemento 1</h2>
+        <img src="../Imagenes/imagen1.jpg" width="350px" height="250px" alt="Refresco">
+        <p>PEPSI</p>
+        <p class="precio">Precio: $2.99</p>
+        <input type="number" id="cantidad_suplemento1" value="0" min="0">
+    </div>
+    
+    <div class="suplemento">
+        <h2>Suplemento 2</h2>
+        <img src="../Imagenes/imagen2.jpg" width="350px" height="250px" alt="Suplemento 2">
+        <p>PAPAS FRITAS</p>
+        <p class="precio">Precio: $1.99</p>
+        <input type="number" id="cantidad_suplemento2" value="0" min="0">
+    </div>
+    
+    <div class="suplemento">
+        <h2>Suplemento 3</h2>
+        <img src="../Imagenes/imagen3.jpg" width="350px" height="250px" alt="Suplemento 3">
+        <p>POLLO FRITO</p>
+        <p class="precio">Precio: $3.49</p>
+        <input type="number" id="cantidad_suplemento3" value="0" min="0">
+    </div>
+    
+    <a id="enlace" href="file:///C:/Users/luisc/OneDrive/Documentos/Proyecto%20final/Pagina3.html" target="_blank" target="_blank">TOTAL</a>
+</div>
+
+<script>
+    function calcularTotal() {
+        var cantidad_suplemento1 = parseInt(document.getElementById("cantidad_suplemento1").value);
+        var cantidad_suplemento2 = parseInt(document.getElementById("cantidad_suplemento2").value);
+        var cantidad_suplemento3 = parseInt(document.getElementById("cantidad_suplemento3").value);
+        
+        // Calcula el total de suplementos seleccionados
+        var total_suplementos = cantidad_suplemento1 * 2.99 + cantidad_suplemento2 * 1.99 + cantidad_suplemento3 * 3.49;
+        
+        // Guarda el total de suplementos en localStorage
+        localStorage.setItem('totalSuplementos', total_suplementos);
+        
+        // Redirecciona a la página de total
+       <a id="enlace" href="file:///C:/Users/luisc/OneDrive/Documentos/Proyecto%20final/Pagina3.html" target="_blank"> TOTAL </a>
+    }
+</script>
+</body>
+</html>

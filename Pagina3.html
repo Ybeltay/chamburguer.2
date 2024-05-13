@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Total del Pedido</title>
+<style>
+    /* Estilos CSS para la presentación */
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #FFD700; /* Amarillo oscuro */
+        color: red; /* Cambio de color de texto a rojo */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        position: relative; /* Necesario para posicionar el texto */
+    }
+    .container {
+        text-align: center;
+    }
+    .total {
+        font-size: 24px;
+        margin-top: 20px;
+    }
+    /* Animación para el texto */
+    @keyframes moveText {
+        0% {
+            transform: translateX(0);
+        }
+        50% {
+            transform: translateX(100px);
+        }
+        100% {
+            transform: translateX(0);
+        }
+    }
+    .moving-text {
+        animation: moveText 3s linear infinite;
+        position: absolute; /* Posición absoluta para ajustar */
+        bottom: 20px; /* Ajuste vertical */
+        left: 50%; /* Ajuste horizontal */
+        transform: translateX(-50%); /* Centrar horizontalmente */
+        font-size: 36px; /* Tamaño más grande */
+        font-weight: bold; /* Texto en negrita */
+    }
+    /* Estilo para la imagen */
+    .image-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        padding: 20px; /* Espacio entre la imagen y el borde superior */
+    }
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+</style>
+</head>
+<body>
+<div class="image-container">
+    <!-- Espacio para la imagen -->
+    <img src="../Imagenes/imagen7.jpg" width="350px" height="250px">
+</div>
+<div class="container">
+    <h1>Total del Pedido</h1>
+    <div id="totalPedido" class="total"></div>
+    <!-- Texto que se mueve horizontalmente -->
+    <div class="moving-text">SU ORDEN VA EN CAMINO</div>
+<a href="https://www.youtube.com/watch?v=ZNKRJIbZkMM" target="_blank">¿COMO PREPARAR UNA HAMBURGUESA?</a>
+    </video>
+</div>
+
+<script>
+    // Obtiene el precio total de las hamburguesas desde localStorage
+    var precioHamburguesas = localStorage.getItem('totalHamburguesas');
+    precioHamburguesas = precioHamburguesas ? parseFloat(precioHamburguesas) : 0;
+
+    // Obtiene el precio total de los suplementos desde localStorage
+    var precioSuplementos = localStorage.getItem('totalSuplementos');
+    precioSuplementos = precioSuplementos ? parseFloat(precioSuplementos) : 0;
+
+    // Calcula el precio total del pedido sumando los precios de las hamburguesas y los suplementos
+    var totalPedido = precioHamburguesas + precioSuplementos;
+
+    // Muestra el precio total del pedido en la página
+    document.getElementById('totalPedido').innerText = 'Total del Pedido: $' + totalPedido.toFixed(2);
+</script>
+</body>
+</html>

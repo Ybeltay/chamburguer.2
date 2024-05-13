@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Menú de Hamburguesas</title>
+<style>
+    /* Estilos CSS para la presentación */
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #FFD700; /* Amarillo oscuro */
+        color: red; /* Cambio de color de texto a rojo */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+    .container {
+        text-align: center;
+    }
+    a {
+        display: block;
+        background-color: red;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-size: 16px;
+        margin-top: 20px;
+    }
+    /* Ajustar la altura del select */
+    select {
+        width: 100%;
+        padding: 15px; /* Ajusta la altura */
+        border: none;
+        border-radius: 5px;
+        background-color: #fff;
+        color: red; /* Cambio de color de texto a rojo */
+        font-size: 20px; /* Tamaño de letra más grande */
+        font-weight: bold; /* Texto en negrita */
+        margin-bottom: 20px;
+    }
+    /* Estilo para las imágenes */
+    .hamburguesa-img {
+        width: 350px;
+        height: 250px;
+        margin-top: 20px;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h1>Menú de Hamburguesas</h1>
+    <select id="hamburguesas" onchange="mostrarEspecificaciones()">
+        <option value="0">Seleccione una hamburguesa</option>
+        <option value="1">Hamburguesa Clásica</option>
+        <option value="2">Hamburguesa BBQ</option>
+        <option value="3">Hamburguesa Vegetariana</option>
+    </select>
+    <br>
+    <div id="especificaciones"></div>
+    <div id="imagen-hamburguesa"></div>
+    <a id="enlace" href="file:///C:/Users/luisc/OneDrive/Documentos/Proyecto%20final/Pagina2.html.html" target="_blank"> SUPLEMENTOS </a>
+</div>
+
+<script>
+    function mostrarEspecificaciones() {
+        var combo = document.getElementById("hamburguesas");
+        var especificacionesDiv = document.getElementById("especificaciones");
+        var imagenDiv = document.getElementById("imagen-hamburguesa");
+        var opcionSeleccionada = combo.value;
+
+        switch (opcionSeleccionada) {
+            case "1":
+                especificacionesDiv.innerHTML = "Hamburguesa Clásica:<br>- Carne de res<br>- Queso<br>- Lechuga<br>- Tomate<br>- Cebolla<br>Precio: $5.99";
+                imagenDiv.innerHTML = '<img class="hamburguesa-img" src="../Imagenes/imagen4.jpg" alt="Hamburguesa Clásica">';
+                break;
+            case "2":
+                especificacionesDiv.innerHTML = "Hamburguesa BBQ:<br>- Carne de res<br>- Queso<br>- Bacon<br>- Cebolla caramelizada<br>- Salsa BBQ<br>Precio: $6.99";
+                imagenDiv.innerHTML = '<img class="hamburguesa-img" src="../Imagenes/imagen5.jpg" alt="Hamburguesa BBQ">';
+                break;
+            case "3":
+                especificacionesDiv.innerHTML = "Hamburguesa Vegetariana:<br>- Hamburguesa de lentejas<br>- Queso vegano<br>- Aguacate<br>- Tomate<br>- Lechuga<br>Precio: $7.49";
+                imagenDiv.innerHTML = '<img class="hamburguesa-img" src="../Imagenes/imagen6.jpg" alt="Hamburguesa Vegetariana">';
+                break;
+            default:
+                especificacionesDiv.innerHTML = "";
+                imagenDiv.innerHTML = "";
+                alert("Por favor seleccione una hamburguesa válida");
+        }
+    }
+</script>
+</body>
+</html>
